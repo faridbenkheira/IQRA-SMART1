@@ -1,0 +1,32 @@
+IQRA SMART - Projet Android
+
+Contenu
+- app/src/main/assets/index.html : interface et activites pedagogiques
+- app/src/main/java/com/iqrasmart/app/MainActivity.kt : conteneur Android et pont de synthese vocale
+- app/src/main/AndroidManifest.xml : configuration Android
+- .github/workflows/build-apk.yml : compilation automatique sur GitHub Actions
+
+Compilation sur GitHub
+1. Creer un depot GitHub et y televerser tous les fichiers du projet.
+2. Ouvrir l'onglet Actions.
+3. Lancer le workflow "Build APK" (ou effectuer un push sur le depot).
+4. A la fin du workflow, ouvrir l'execution reussie et telecharger l'artefact "IQRA-SMART-apk".
+5. Extraire le fichier app-debug.apk et l'installer sur un appareil Android.
+
+Configuration locale
+- JDK 17
+- Android Gradle Plugin 8.7.3
+- Gradle 8.9
+- Android compileSdk 35
+
+Synthese vocale arabe
+L'application utilise le moteur Android Text-to-Speech du telephone. La disponibilite
+reelle de l'arabe est verifiee au demarrage. Si les donnees vocales arabes ne sont pas
+installees, ouvrir les parametres Android > Gestion globale / Langue et saisie >
+Synthese vocale, choisir le moteur prefere puis installer les donnees vocales arabes.
+Les intitulés des menus peuvent varier selon le fabricant et la version Android.
+
+Remarque
+Le workflow GitHub compile avec Gradle 8.9 installe par GitHub Actions. Les scripts
+gradlew et gradlew.bat ne sont pas inclus dans cette archive; ils ne sont pas requis
+par le workflow fourni.
